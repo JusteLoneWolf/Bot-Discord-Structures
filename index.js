@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 const client = new Discord.Client({
   disableEveryone: true,
   fetchAllMembers: false,
-})
+});
 const fs = require("fs");
-client.prefix = '/' //change your prefix
+client.prefix = '/'; //change your prefix
 require("./utils/eventLoader")(client);//export event
     
 client.commands = new Discord.Collection();//create colection
