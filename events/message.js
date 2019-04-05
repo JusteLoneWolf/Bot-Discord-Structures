@@ -18,5 +18,5 @@ module.exports = (message) => {
   };
   if (cmd) {
     cmd.run(client, message, params);
-    };
+    }
 };
