@@ -4,7 +4,7 @@ const client = new Discord.Client({
   fetchAllMembers: false,
 });
 const fs = require("fs");
-client.prefix = '/'; //change your prefix
+client.prefix = "/"; //change your prefix
 require("./utils/eventLoader")(client);//export event
     
 client.commands = new Discord.Collection();//create colection
