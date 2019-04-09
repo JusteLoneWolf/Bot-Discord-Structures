@@ -26,10 +26,11 @@ exports.run = (client, message, params) => {
         if (client.commands.has(command)) {
           command = client.commands.get(command);
               var getvalueof;
-          if (command.conf.aliases) {
-            var getvalueof = `${client.prefix}${command.conf.aliases}`;
-          } else {
-            var getvalueof ="No aliases";
+          if (command.conf.aliases.lenght === 0 ) {
+
+          getvalueof ="No aliases";
+	  } else {
+            getvalueof = `${client.prefix}${command.conf.aliases}`;
            }
           message.channel.send({
             color: "#F55404",
