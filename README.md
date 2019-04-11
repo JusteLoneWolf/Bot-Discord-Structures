@@ -1,8 +1,6 @@
 # Bot-Discord-Structure
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a72d4928550f45ec820cbf7067f08b25)](https://app.codacy.com/app/zechaos031/Bot-Discord-Structure?utm_source=github.com&utm_medium=referral&utm_content=zechaos031/Bot-Discord-Structure&utm_campaign=Badge_Grade_Dashboard)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a72d4928550f45ec820cbf7067f08b25)](https://app.codacy.com/app/zechaos031/Bot-Discord-Structure?utm_source=github.com&utm_medium=referral&utm_content=zechaos031/Bot-Discord-Structure&utm_campaign=Badge_Grade_Settings)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a72d4928550f45ec820cbf7067f08b25)](https://app.codacy.com/app/zechaos031/Bot-Discord-Structure?utm_source=github.com&utm_medium=referral&utm_content=zechaos031/Bot-Discord-Structure&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4f86765dee744acbab100c6f427f06a3)](https://www.codacy.com/app/zechaos031/Bot-Discord-Structures?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zechaos031/Bot-Discord-Structures&amp;utm_campaign=Badge_Grade)
 
 A repository for a basic discord bot with a command handler
 
