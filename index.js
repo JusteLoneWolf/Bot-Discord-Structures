@@ -5,7 +5,6 @@ const client = new Client({
 });
 const fs = require("fs");
 client.prefix = "/"; //change your prefix
-require("./utils/eventLoader")(client);//export event
     
 client.commands = new Collection();//create colection
 client.aliases= new Collection();//create colection
@@ -27,4 +26,14 @@ fs.readdir("./commandes/fun", (err, files) => {       //copy this to each new fo
     });                                               //copy this to each new folder
   });                                                 //copy this to each new folder
 });                                                   //copy this to each new folder
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+
+    client.on(eventName, event.bind(null, client));
+  });
+  console.log(` ${files.length} events chargés`)
+})
 client.login(client.token);//change token bot
