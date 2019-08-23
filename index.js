@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
-const client = new Discord.Client({
+const {Client, Collection} = require("discord.js");
+const client = new Client({
   disableEveryone: true,
   fetchAllMembers: false,
 });
@@ -7,8 +7,8 @@ const fs = require("fs");
 client.prefix = "/"; //change your prefix
 require("./utils/eventLoader")(client);//export event
     
-client.commands = new Discord.Collection();//create colection
-client.aliases= new Discord.Collection();//create colection
+client.commands = new Collection();//create colection
+client.aliases= new Collection();//create colection
 fs.readdir("./commandes/info", (err, files) => {
   files.forEach((f) => {
     const props = require("./commandes/info/"+f);
