@@ -1,8 +1,7 @@
-module.exports = (message) => {
+module.exports = (client, message) => {
   if (message.author.bot){
     return;
   }
-    const client = message.client;
 
       if(!message.content.startsWith(client.prefix)){
         return;
