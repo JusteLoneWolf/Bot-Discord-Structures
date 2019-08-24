@@ -70,8 +70,8 @@ exports.help = {
     usage: "help [command]" //exemple usage for this command
   };
 /*ALL EXPORT (export.conf and export.help) must be inside ALL commands
-/*ALL EXPORT (export.conf and export.help) must be inside ALL commands
-/*ALL EXPORT (export.conf and export.help) must be inside ALL commands
-/*ALL EXPORT (export.conf and export.help) must be inside ALL commands
-/*ALL EXPORT (export.conf and export.help) must be inside ALL commands
+ALL EXPORT (export.conf and export.help) must be inside ALL commands
+ALL EXPORT (export.conf and export.help) must be inside ALL commands
+ALL EXPORT (export.conf and export.help) must be inside ALL commands
+ALL EXPORT (export.conf and export.help) must be inside ALL commands*/
 
