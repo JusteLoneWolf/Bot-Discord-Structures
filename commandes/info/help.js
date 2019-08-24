@@ -23,11 +23,28 @@ exports.run = (client, message, params) => {
           });
 	}else { 
         let command = params[0];
+		if(params[0] ==='info'){
+			message.channel.send({
+				embed:{
+					color: "#F55404",
+					title: client.user.username
+					fields:[
+						name:`Catégory ${params[0]}`
+						value: client.commands.filter((command) => command.conf.category === params[0]).map((command) => `**${command.help.name}**: \`${command.help.description}\``).join('\n')
+					]
+				}
+			})
+		}
         if (client.commands.has(command)) {
-          command = client.commands.get(command);
+            command = client.commands.get(command);
+        }else if(client.aliases.has(command)){
+            command = client.commands.get(client.aliases.get(command));
+        }
+
+	 if(!command.conf) return client.fonction.sendEmbed(message, 'This category or command doesn\'t existe');
               var getvalueof;
           if (command.conf.aliases.lenght === 0 ) {
-
+	
           getvalueof ="No aliases";
 	  } else {
             getvalueof = `${client.prefix}${command.conf.aliases}`;
@@ -57,7 +74,6 @@ exports.run = (client, message, params) => {
               }
             }
           });
-        }
       };
     };
 exports.conf = {
