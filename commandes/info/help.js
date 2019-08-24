@@ -26,7 +26,6 @@ exports.run = (client, message, params) => {
 		if(params[0] ==='info'){
 			message.channel.send({
 				embed:{
-					color: "#F55404",
 					title: client.user.username
 					fields:[
 						name:`Catégory ${params[0]}`
@@ -41,7 +40,7 @@ exports.run = (client, message, params) => {
             command = client.commands.get(client.aliases.get(command));
         }
 
-	 if(!command.conf) return client.fonction.sendEmbed(message, 'This category or command doesn\'t existe');
+	 if(!command.conf) return message.channel.send(message, 'This category or command doesn\'t existe');
               var getvalueof;
           if (command.conf.aliases.lenght === 0 ) {
 	
