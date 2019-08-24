@@ -17,7 +17,7 @@ fs.readdir("./commandes/info", (err, files) => {
     });
   });
 });
-fs.readdir("./commandes/fun", (err, files) => {       //copy this to each new folder
+/*fs.readdir("./commandes/fun", (err, files) => {       //copy this to each new folder
   files.forEach((f) => {                                //copy this to each new folder
     const props = require("./commandes/fun/"+f);    //copy this to each new folder
     client.commands.set(props.help.name, props);      //copy this to each new folder
@@ -25,7 +25,7 @@ fs.readdir("./commandes/fun", (err, files) => {       //copy this to each new fo
       client.aliases.set(alias, props.help.name);     //copy this to each new folder
     });                                               //copy this to each new folder
   });                                                 //copy this to each new folder
-});                                                   //copy this to each new folder
+});                                                   //copy this to each new folder*/
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
