@@ -34,6 +34,6 @@ fs.readdir("./events/", (err, files) => {
 
     client.on(eventName, event.bind(null, client));
   });
-  console.log(` ${files.length} events chargés`)
+  console.log(` ${files.length} event load`)
 })
 client.login(client.token);//change token bot
