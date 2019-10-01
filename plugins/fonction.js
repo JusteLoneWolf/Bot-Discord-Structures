@@ -20,7 +20,7 @@ function usage(client, message, command){
     return message.channel.send({
         embed:{
             color:client.color.messagecolor.blue,
-            description: `<:ultra_warning:613333212340682754> Wrong Usage: ${usage.replace(re, guildDb.prefix)}`
+            description: `:warning: Wrong Usage: ${usage.replace(re, guildDb.prefix)}`
         }
     })
 }
