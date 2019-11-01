@@ -38,6 +38,17 @@ const {SomeError} = require('./utils/CustomError');
 
 if(client.shard === null) throw new SomeError('Shards are not findable');
 //DATABASE
+
+const fs = require('fs');
+
+if (!fs.existsSync('./database')) {
+
+      fs.mkdirSync('./database');
+}
+if (!fs.existsSync('./database/guilddb')) {
+
+      fs.mkdirSync('./database/guilddb');
+}
 client.guilddb = new Enmap({name: "guilddb", dataDir: './database/guilddb'});
 
 //SET COLLECTION
