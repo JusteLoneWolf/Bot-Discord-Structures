@@ -32,7 +32,6 @@ let chalkcolor ={
 };
 
 let messagecolor={
-    novuscolor: 0xdc80AE,
     red : 0xF52E2E,
     yellow: 0xF5F52E,
     orange: 0xF5AD2E,
