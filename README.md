@@ -9,7 +9,7 @@ npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
 - Linux
 ```
-wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
