@@ -1,6 +1,8 @@
-    parseUser = require('./parseUser');
-    permission = require('./permission');
-    fonction = require('./fonction');
+"use strict"; 
+
+const parseUser = require('./parseUser'),
+    permission = require('./permission'),
+    fonction = require('./fonction'),
 
 
 module.exports = {
