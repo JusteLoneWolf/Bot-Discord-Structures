@@ -3,13 +3,15 @@
 A repository for a basic discord bot with a command handler
 ## Requirement
 - Windows
->- [NodeJS](https://nodejs.org/dist/v12.10.0/node-v12.10.0-x64.msi)
+>- [NodeJS](https://nodejs.org/)
 >- **Execute this commands only powershell has administrator** `
 npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
 - Linux
 ```
-wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+wget -qO- https://deb.nodesource.com/setup_13.x | sudo -E bash -
+
 sudo apt install -y nodejs
 ```
 
@@ -28,13 +30,13 @@ npm i
 - If you have some error with modules
 > *Discord JS*
 ```
-npm i discordjs
+npm i discordjs@latest
 ```
 
 > *Enmap*
 
 ```
-npm i enmap@5.0.0
+npm i enmap@latest
 ```
 
 > *Better Sqlite 3*
