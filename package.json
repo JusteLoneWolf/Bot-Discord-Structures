@@ -1,6 +1,6 @@
 {
-  "name": "nouveau-lynhall",
-  "version": "2.0.0",
+  "name": "Bot-Discord-Structures",
+  "version": "4.0.0",
   "description": "A repository for a basic discord bot with a command handler\r ## Requirement\r - Windows\r >- [NodeJS](https://nodejs.org/dist/v12.10.0/node-v12.10.0-x64.msi)\r >- **Execute this commands only powershell has administrator** `\r npm i -g --add-python-to-path --vs2015 --production windows-build-tools`",
   "main": "index.js",
   "scripts": {
