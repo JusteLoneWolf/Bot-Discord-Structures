@@ -1,7 +1,7 @@
 const {Client, Collection} = require('discord.js'),
     client = new Client({
         disableEveryone: true,
-        fetchAllMembers: false
+        fetchAllMembers: false,
           disabledEvents:[
       'GUILD_UPDATE',
       'GUILD_MEMBER_UPDATE',
@@ -72,4 +72,4 @@ client.config = require('./config');
 //SEARCH COMMAND ANS MORE
 require('./index.js')(client);
 
-client.login(client.config.token);
+//client.login(client.config.token);
