@@ -14,7 +14,6 @@ module.exports = (client,message) => {
         cmd = client.commandes.get(client.aliases.get(command))
     }
     if(!cmd) return;
-    if(cmd.conf.category === "Owner" && message.author.id !== '379705914824851469' && message.author.id !== '236627494764150784') return message.channel.send('You don\'t the owner of the bot');
     try {
         cmd.run(client, message, params);
     } catch (e) {
