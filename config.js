@@ -1,4 +1,5 @@
 module.exports = {
   token: '',
-  owner:[]
+  owner:[],
+  prefix:'!'
 };
