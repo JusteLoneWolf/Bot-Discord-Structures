@@ -4,7 +4,7 @@ client.guilds.forEach((g) => {
     let defaut = {
       _id: g.id,
       name: g.name,
-      prefix:'!',
+      prefix:client.config.prefix,
     };
     client.guilddb.set(g.id,defaut);
     client.logger.database(`${g.name} is registered is database`)
