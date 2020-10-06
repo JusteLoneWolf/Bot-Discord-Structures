@@ -1,19 +1,15 @@
 {
-  "name": "Logia",
-  "version": "4.0.0",
-  "description": "Logia bot discord",
-  "main": "shards.js",
-  "scripts": {
-    "test": "node shards.js"
-  },
-  "author": "zechaos & Warix",
-  "license": "ISC",
+  "name": "structurebot",
+  "version": "5.0.0",
   "dependencies": {
-    "better-sqlite3": "^5.4.3",
-    "discord.js": "^11.5.1",
-    "enmap": "^5.0.0",
-    "moment": "^2.24.0",
-    "moment-duration-format": "^2.3.2",
-    "os": "^0.1.1"
-  }
+    "discord.js": "^12.3.1"
+  },
+  "description": "A simple Structure and economic for discord bot written in discord.js",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zechaos",
+  "license": "ISC"
 }
