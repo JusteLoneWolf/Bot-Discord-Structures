@@ -4,10 +4,12 @@ A repository for a basic discord bot with a command handler
 ## Requirement
 - Windows
 >- [NodeJS](https://nodejs.org/)
+>- **Execute this commands only powershell has administrator** `
+npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
 - Linux
 ```
-wget -qO- https://deb.nodesource.com/setup_14.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_13.x | sudo -E bash -
 ```
 
 ```
@@ -26,8 +28,39 @@ sudo apt install -y nodejs
 npm i 
 ```
 
+- If you have some error with modules
+> *Discord JS*
+```
+npm i discordjs@latest
+```
+
+> *Enmap*
+
+```
+npm i enmap@latest
+```
+
+> *Better Sqlite 3*
+
+```
+npm i better-sqlite3
+``` 
+
+> *Chalk*
+```
+npm i chalk
+```
+
+> *Moment*
+```
+npm i moment
+```
+
+### NOTES
+Before the first launch create folder `database/guilddb` 
+
 ## Launch
 > Run
  ```
-node main.js
+node shards.js
 ```
