@@ -2,11 +2,16 @@
   "name": "structurebot",
   "version": "5.0.0",
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^12.3.1",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "mongoose": "^5.10.15"
   },
   "description": "A simple Structure and economic for discord bot written in discord.js",
   "main": "main.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "chalk": "^4.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
