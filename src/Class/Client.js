@@ -1,34 +1,31 @@
 const {Client,Collection} = require('discord.js'),
     {readdir} = require("fs"),
+    DbManager = require('../utils/DatabaseManager'),
     Logger = require('../utils/Logger'),
-    Utils = require('../utils/Utils'),
-    NsfwClient = require('./NSFWClient'),
-    Automod = require('../module/Automod')
+    Utils = require('../utils/Utils')
 
-
-class StructureBot extends Client {
+class StructureBot extends Client{
     constructor(config) {
         super(config.client);
-        ["commands", "aliases", "cooldowns"].forEach(x => this[x] = new Collection())
+        ["commands", "aliases","cooldowns"].forEach(x => this[x] = new Collection())
+        this.dbmanager = new DbManager()
         this.config = config.option
         this.logger = new Logger()
         this.utils = new Utils()
-        this.nsfwia = new NsfwClient(this)
-        this.automod = new Automod(this)
 
     }
-
-    init = () => {
+    init= () =>{
+        //require('../module/mongoose').init()
         this.commandLoader()
         this.eventLoader()
         this.connect()
-        this.nsfwia.init()
 
     }
-    connect = () => {
+    connect = () =>{
         super.login(this.config.token)
     }
-    commandLoader = () => {
+    commandLoader = () =>{
+        console.log("ttest")
         readdir("./src/commands/", (err, files) => {
             if (err) this.emit("error", err);
             for (const dir of files) {
@@ -51,7 +48,7 @@ class StructureBot extends Client {
         });
     }
 
-    eventLoader = () => {
+    eventLoader = () =>{
         readdir("./src/events", (err, files) => {
             if (!files) return;
             if (err) this.emit("error", err);
@@ -62,7 +59,7 @@ class StructureBot extends Client {
                     for (const evt of file) {
                         try {
                             if (!evt) return;
-                            const event = require(`../events/${dir}/${evt}`);
+                            const event =require(`../events/${dir}/${evt}`);
                             this.logger.info(`[Client] ${evt} load`);
                             super.on(evt.split(".")[0], event.bind(null, this));
                         } catch (e) {
@@ -73,6 +70,7 @@ class StructureBot extends Client {
             }
         });
     }
+
 }
 
 module.exports = StructureBot

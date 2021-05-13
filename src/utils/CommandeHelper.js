@@ -12,19 +12,6 @@ const HELPER = {
                 category: "Information",
                 mention: true
             },
-        },
-        OWNER:{
-            BAN:{
-                name: "ban",
-                description: "Ban un utilisateur",
-                usage: `ban`,
-                cooldowns: 5000,
-                aliases: ["b"],
-                permission: "READ_MESSAGES",
-                allowDMs: true,
-                category: "Owner",
-                mention: true
-            }
         }
     }
 };

@@ -1,9 +1,6 @@
 const {Collection} = require("discord.js");
 module.exports = async (client,message) => {
     if (message.author.bot || message.channel.type === "dm") return;
-
-    client.automod.word(message)
-
     let prefix = "!";
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.split(' ').slice(1);
@@ -16,7 +13,6 @@ module.exports = async (client,message) => {
     if (!client.cooldowns.has(cmd.help.name)) {
         client.cooldowns.set(cmd.help.name, new Collection());
     }
-
 
     const timeNow = Date.now();
     const tStamps = client.cooldowns.get(cmd.help.name);
@@ -35,17 +31,13 @@ module.exports = async (client,message) => {
             tStamps.set(message.author.id, timeNow);
         }
     }
-    if(!client.config.owner.includes(message.author.id)){
-        if(cmd.help.category === 'Owner'){
-            return message.reply(`Vous n'êtes pas autorisé a exécuté ça `,{replyUser:false})
-        }
-    }
     setTimeout(()=> tStamps.delete(message.author.id),cdAmount)
     //Cooldown
 
     cmd.setMessage(message);
     try {
         //await this.getInvite(client,message.guild, guildData)
+
         cmd.run(message, args);
     } catch (e) {
         client.emit('error', e.stack, message.channel, cmd)

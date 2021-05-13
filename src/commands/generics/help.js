@@ -23,7 +23,7 @@ class Help extends Command{
                         name: `${this.client.user.username} | Commandes`,
                         icon_url: this.client.user.avatarURL()
                     },
-                    description: `${this.client.config.prefix}help [command name] pour plus d'aide`,
+                    description: `${this.client.config.prefix}help [command name] for more help `,
                     fields: categorie.sort().map(c => {
                         return {
                             name: `❱ ${c}`,
@@ -34,13 +34,14 @@ class Help extends Command{
             })
         } else {
 
+            let page = 1
             let command = args[0];
             if (this.client.commands.has(command)) {
                 command = this.client.commands.get(command);
             } else if (this.client.aliases.has(command)) {
                 command = this.client.commands.get(this.client.aliases.get(command));
             }
-            if (!command.conf) return message.channel.send("Cette commande n'existe pas");
+            if (!command.conf) return message.channel.send("this command doesn't existe");
             let subcmdInfo = ''
 
             for(let test of command.help.args){
