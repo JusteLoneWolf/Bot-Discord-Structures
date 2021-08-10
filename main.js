@@ -1,4 +1,12 @@
-const DiscordBotStructure = require('./src/Class/Client')
-const client = new DiscordBotStructure(require('./config'))
+const Akina = require("./src/Client");
+const client = new Akina({
+  conf: require('./config.js.exemple'),
+  translateModule:false,
+  databaseModule:'none',
+  commands:true,
+  cooldownManager:false,
+});
+new (require("cat-loggr"))().setGlobal();
+client.init();
+require('./src/utils/prototype')
 
-client.init()

@@ -1,0 +1,40 @@
+require("dotenv").config();
+
+module.exports = {
+  clientOption: {
+    partials: [
+      "MESSAGE",
+      "GUILD_MEMBER",
+      "USER",
+      "REACTION "
+    ],
+    ws: {
+      intent: [
+        "GUILD_UPDATE",
+        "GUILD_MEMBERS",
+        "GUILD_BANS",
+        "GUILD_MESSAGES",
+        "GUILD_MESSAGE_REACTIONS",
+      ]
+    },
+    disableMentions: "all",
+    messageCacheMaxSize: 100,
+    messageSweepInterval: 120,
+  },
+  option: {
+    token: "",
+    prefix: "!",
+    db:"",
+    owner: [],
+    developers: [],
+    moderator: [],
+    support: [],
+    status:{
+      name:"",
+      option:{
+        type:0, //Strings or Number
+        url:"",
+      },
+    },
+  },
+};

@@ -1,17 +1,15 @@
-const chalk = require("chalk"),
-    moment = require("moment");
-require("moment-duration-format");
+const chalk = require("chalk");
 
-class Logger{
-    constructor(){
-    }
-    info(content){
-        return console.log(`[${moment.utc(Date.now()).format("HH:mm:ss")}] ${chalk.bgBlack.green(content)}`)
-    }
+class Logger {
+  constructor () {}
 
-    error(content){
-        return console.error(`[${moment.utc(Date.now()).format("HH:mm:ss")}] ${chalk.bgBlack.red(content)}`)
-    }
+  info (content) {
+    return console.info(`${chalk.bgBlack.green(content)}`);
+  }
+
+  error (content) {
+    return console.error(`${chalk.bgBlack.red(content)}`);
+  }
 }
 
 module.exports = Logger;

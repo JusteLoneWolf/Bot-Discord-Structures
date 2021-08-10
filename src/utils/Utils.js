@@ -1,9 +1,16 @@
-class Utils{
+class Utils {
 
-    //Remove @everyone, @here unicode bypasser
-    parseMessage(content){
-        return content.replace(/@(everyone|here)/g, "@\u200b$1").replace(/\u202e/g, "")
+  isOnMobile = (author, args = []) => { // Because buttons are bugs on mobile
+    if (args.length) {
+      return true;
+    } else {
+      if ( author.presence.status === "offline" || author.presence.clientStatus["mobile"] ) {
+        return true;
+      } else if ( !author.presence.clientStatus["mobile"] && ( author.presence.clientStatus["desktop"] || author.presence.clientStatus["web"] ) ) {
+        return false;
+      }
     }
+  };
 }
 
-module.exports = Utils
+module.exports = Utils;
