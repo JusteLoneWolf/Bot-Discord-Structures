@@ -21,7 +21,7 @@ module.exports = {
     },
   },
   option: {
-    token: "NzA1NDUwNzI3OTMzMzQ1Nzk0.Xqr4MA.W-5e0cjG1k2oVnppalIEUkYmPc8",
+    token: "",
     prefix: "!",
     db: "",
     owner: [],
