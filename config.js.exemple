@@ -30,9 +30,9 @@ module.exports = {
     support: [],
     status: [
       {
-        name: "Salut",
+        name: "",
         option: {
-          type: '0', //Strings
+          type: '0', //Strings or numbers
           url: "",
         },
       },
