@@ -1,6 +1,12 @@
 {
-  "name": "TemplateBot",
-  "version": "1.0.0",
+  "name": "structurebot",
+  "version": "6.0.1",
+  "description": "A simple Structure and economic for discord bot written in discord.js",
+  "main": "main.js",
+  "author": "zechaos",
+  "scripts": {
+    "start": "node main"
+  },
   "dependencies": {
     "cat-loggr": "^1.1.0",
     "discord.js": "^12.5.3",

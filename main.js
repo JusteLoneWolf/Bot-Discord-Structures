@@ -1,6 +1,7 @@
-const Akina = require("./src/Client");
-const client = new Akina({
-  conf: require('./config.js.exemple'),
+const StructureBot = require("./src/Client");
+const client = new StructureBot({
+  conf: require('./config.js.exemple').option,
+  clientOption:require('./config.js.exemple').clientOption,
   translateModule:false,
   databaseModule:'none',
   commands:true,

@@ -9,19 +9,20 @@ const { Client, Collection } = require("discord.js"),
 class StructureClient extends Client {
   constructor (otps = {
     conf:{},
+    clientOption: {},
     translateModule:false,
     databaseModule:"none",
     commands:true,
     cooldownManager:true
   }) {
-    super(otps.conf.clientOption);
-    this.config = otps.conf.option;
+    super(otps.clientOption);
+    this.config = otps.conf;
     this.opts = otps
     console.info(`[StructureClient] Les options client sont:
-    Module de traduction: ${otps.translateModule}
-    Module de base de donné: ${otps.databaseModule}
-    Module de commandes: ${otps.commands}
-    Module de cooldown: ${otps.cooldownManager}`)
+      Module de traduction: ${otps.translateModule}
+      Module de base de donné: ${otps.databaseModule}
+      Module de commandes: ${otps.commands}
+      Module de cooldown: ${otps.cooldownManager}`)
     this.logger = new Logger();
     this.utils = new Utils();
     this.events = new Events(this);
@@ -52,7 +53,7 @@ class StructureClient extends Client {
     console.info("(──────────────────────)");
     console.info("[Translate] Chargement des traduction");
     if ( !this.opts.translateModule ) {
-      console.warn("Le module de traduction est désactivé vous pourrier donc pas change de langue pour un serveur")
+      console.warn("Le module de traduction est désactivé vous pourriez donc pas change de langue pour un serveur")
     }
     await this.translate.initLang();
     this.logger.info("[Translate] Chargement des traduction terminé");
