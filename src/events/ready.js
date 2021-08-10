@@ -2,6 +2,7 @@ const Event = require("../Structure/Event");
 class Ready extends Event {
   constructor (client) {
     super(client, { name: "ready" });
+    this.once = true
     this.client = client;
   }
 
@@ -10,10 +11,12 @@ class Ready extends Event {
   }
 
   async _status () {
-    await this.client.user.setActivity(`${this.client.config.status.name}`, {
-          type:Ready.getType(this.client.config.status.option.type),
-          url:this.client.config.status.option.url
-        });
+
+    for(const activity of this.client.config.status){
+      activity.option.type = Ready.getType(activity.option.type)
+    }
+
+    await this.client.user.setPresence({ activities: this.client.config.status });
 
   }
 
@@ -24,22 +27,22 @@ class Ready extends Event {
   static getType(type){
     switch ( type ){
       case "PLAYING":
-      case 0:
-        return 0
+      case '0':
+        return 'PLAYING'
       case "STREAMING":
-      case 1:
-        return 1
+      case '1':
+        return 'STREAMING'
       case "LISTENING":
-      case 2:
-        return 2
+      case '2':
+        return 'LISTENING'
       case "WATCHING":
-      case 3:
-        return 3
+      case '3':
+        return 'WATCHING'
       case "COMPETING":
-      case 5:
-        return 5
+      case '5':
+        return 'COMPETING'
       default:
-        return 0
+        return 'PLAYING'
     }
   }
 }

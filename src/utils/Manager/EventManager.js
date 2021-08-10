@@ -17,10 +17,12 @@ class EventsManager {
 
   addEvent (event) {
     this._events.set(event.name.toLowerCase(), event);
-    this._client.on(event.name, event.run.bind(event));
-    delete require.cache[
-        require.resolve(this._path + path.sep + event.name)
-        ];
+    if(event.once){
+      this._client.once(event.name, event.run.bind(event));
+    }else {
+      this._client.on(event.name, event.run.bind(event));
+    }
+    delete require.cache[require.resolve(this._path + path.sep + event.name)];
   }
 
   findEvent (name) {
