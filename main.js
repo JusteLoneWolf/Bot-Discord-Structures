@@ -14,6 +14,4 @@ try {
   require('./src/utils/prototype')
 }catch ( e ) {
   console.error(('Fichier non trouvé'))
-} finally {
-
 }
