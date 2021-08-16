@@ -1,4 +1,7 @@
 ## Discord Bot Structure
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/59ed6e758c54428183a5a17b4df6533c)](https://app.codacy.com/gh/zechaos031/Bot-Discord-Structures?utm_source=github.com&utm_medium=referral&utm_content=zechaos031/Bot-Discord-Structures&utm_campaign=Badge_Grade_Settings)
+
 For the [DJS v13](https://github.com/zechaos031/Bot-Discord-Structures/tree/Version-6.0-v13) (in dev)
 ### Requirements
 - Nodejs v14 minimum (latest release)
