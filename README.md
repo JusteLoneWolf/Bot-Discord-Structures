@@ -1,5 +1,5 @@
 ## Discord Bot Structure
-
+For the [DJS v13](https://github.com/zechaos031/Bot-Discord-Structures/tree/Version-6.0-v13) (in dev)
 ### Requirements
 - Nodejs v14 minimum (latest release)
 
@@ -33,8 +33,13 @@ Download git [here](https://git-scm.com/)
 
 ### DiscordBotStructure options
 **DiscordBotStructure#conf**: The bot config. Default: {}.
+
 **DiscordBotStructure#clientOption**: The clientOption. Default: {}.
+
 **DiscordBotStructure#translateModule**: The translationModule. Default: false.
+
 **DiscordBotStructure#databaseModule**: The dataBaseModule. Default: none.
+
 **DiscordBotStructure#commands**: The commandeModule. Default: true.
+
 **DiscordBotStructure#cooldownManager**: The cooldownManager. Default: true.
