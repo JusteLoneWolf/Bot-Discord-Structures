@@ -1,8 +1,8 @@
 const Context = require("../../commands/Context");
 
 class CommandService {
-  GuildData;
-  MemberData;
+  GuildData={};
+  MemberData ={};
   constructor (client) {
     this.client = client;
   }
@@ -12,7 +12,7 @@ class CommandService {
     const me = guild.members.cache.get(this.client.user.id);
     let data = {};
 
-    if (!me.hasPermission("SEND_MESSAGES")) return;
+    if (!me.permissions.has("SEND_MESSAGES")) return;
     if(this.client.opts.databaseModule !== 'none' || !this.client.opts.databaseModule){
 
 
@@ -27,7 +27,7 @@ class CommandService {
     this.client.translate.setLang(data?.guild?.lang || "fr"); //required even if translateModule is false
     const prefix = ( data?.guild?.prefix || this.client.config.prefix ).toLowerCase();
 
-    if (!message.content.toString().toLowerCase().startsWith(prefix))
+    if (!message.content.toLowerCase().startsWith(prefix))
       return;
 
     const args = message.content.slice(prefix.length).split(/ +/g).cleanArray().removeSpace();
@@ -42,12 +42,13 @@ class CommandService {
         return message.channel.send(this.client.translate.get("messageEvent.cmdDisabled"));
     }
 
-    if ( command.conf.userPermissions.length > 0 && !command.conf.userPermissions.every((p) => guild.members.cache.get(message.author.id).hasPermission(p, {checkAdmin: true, checkOwner: true,})) ) {
+    if ( command.conf.userPermissions.length > 0 && !command.conf.userPermissions.every((p) => guild.members.cache.get(message.author.id).permissions.has(p, {checkAdmin: true, checkOwner: true,})) ) {
       return message.channel.send(this.client.translate.get("messageEvent.userNoPerm", command.conf.userPermissions.join("`, `")));
     }
-    if ( command.conf.botPermissions.length > 0 && !command.conf.botPermissions.every((p) => guild.members.cache.get(this.client.user.id).hasPermission(p, {checkAdmin: true, checkOwner: true,})) ) {
+    if ( command.conf.botPermissions.length > 0 && !command.conf.botPermissions.every((p) => guild.members.cache.get(this.client.user.id).permissions.has(p, {checkAdmin: true, checkOwner: true,})) ) {
       return message.channel.send(this.client.translate.get("messageEvent.userNoPerm", command.conf.userPermissions.join("`, `")));
     }
+
 
     if(this.client.opts.cooldownManager){
       const cooldownLeft = await command.cooldownInfo(message.author);

@@ -1,14 +1,16 @@
 const Event = require("../Structure/Event");
 const CommandService = require("../Structure/Service/CommandService");
 
-class Message extends Event {
+class MessageCreate extends Event {
   constructor (client) {
-    super(client, { name: "message" });
+    super(client, { name: "messageCreate"});
+    this.once = false
+
     this.commands = new CommandService(this.client);
   }
 
   static bootstrap (client) {
-    return new Message(client);
+    return new MessageCreate(client);
   }
 
   async run (message) {
@@ -16,4 +18,4 @@ class Message extends Event {
     await this.commands.handle(message);
   }
 }
-module.exports = Message;
+module.exports = MessageCreate;

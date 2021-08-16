@@ -7,7 +7,7 @@ const { Client, Collection } = require("discord.js"),
     Commands = require("./utils/Manager/CommandManager");
 
 class StructureClient extends Client {
-  constructor (otps = {
+  constructor (opts = {
     conf:{},
     clientOption: {},
     translateModule:false,
@@ -15,26 +15,26 @@ class StructureClient extends Client {
     commands:true,
     cooldownManager:true
   }) {
-    super(otps.clientOption);
-    this.config = otps.conf;
-    this.opts = otps
+    super(opts.clientOption);
+    this.config = opts.conf;
+    this.opts = opts
     console.info(`[StructureClient] Les options client sont:
-      Module de traduction: ${otps.translateModule}
-      Module de base de donné: ${otps.databaseModule}
-      Module de commandes: ${otps.commands}
-      Module de cooldown: ${otps.cooldownManager}`)
+      Module de traduction: ${opts.translateModule}
+      Module de base de donné: ${opts.databaseModule}
+      Module de commandes: ${opts.commands}
+      Module de cooldown: ${opts.cooldownManager}`)
     this.logger = new Logger();
     this.utils = new Utils();
     this.events = new Events(this);
     this.translate = new Translate(this); //required even if translateModule is false
 
-    if(otps.commands){
+    if(opts.commands){
       this.commands = new Commands(this);
-      if(otps.cooldownManager){
+      if(opts.cooldownManager){
         ["cooldowns"].forEach((x) => ( this[x] = new Collection() ));
       }
     }
-    if(otps.databaseModule === 'mongo'){
+    if(opts.databaseModule === 'mongo'){
       this.db = new MongoDatabase(this)
     }
   }

@@ -1,4 +1,5 @@
 require("dotenv").config();
+const {Intents } = require('discord.js')
 
 module.exports = {
   clientOption: {
@@ -8,33 +9,33 @@ module.exports = {
       "USER",
       "REACTION "
     ],
-    ws: {
-      intent: [
-        "GUILD_UPDATE",
-        "GUILD_MEMBERS",
-        "GUILD_BANS",
-        "GUILD_MESSAGES",
-        "GUILD_MESSAGE_REACTIONS",
-      ]
+    intents: [
+      Intents.FLAGS.GUILDS,
+      Intents.FLAGS.GUILD_MESSAGES
+    ],
+    allowedMentions: {
+      parse: ['users', 'roles'],
+      repliedUser: true,
+      messageCacheMaxSize: 100,
+      messageSweepInterval: 120,
     },
-    disableMentions: "all",
-    messageCacheMaxSize: 100,
-    messageSweepInterval: 120,
   },
   option: {
     token: "",
     prefix: "!",
-    db:"",
+    db: "",
     owner: [],
     developers: [],
     moderator: [],
     support: [],
-    status:{
-      name:"",
-      option:{
-        type:0, //Strings or Number
-        url:"",
+    status: [
+      {
+        name: "",
+        option: {
+          type: '', //Strings
+          url: "",
+        },
       },
-    },
+    ]
   },
 };

@@ -1,6 +1,6 @@
 const Model = require('../../model/index');
 const mongoose = require("mongoose");
-class DatabaseManager {
+class MongoDatabaseManager {
   constructor(client) {
     this.client = client;
     this.models = Model;
@@ -142,4 +142,4 @@ class DatabaseManager {
     return createGuild;
   }
 }
-module.exports = DatabaseManager;
+module.exports = MongoDatabaseManager;
