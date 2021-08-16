@@ -22,7 +22,7 @@ class DatabaseManager {
   async getData(type, find = {}) {
     if (typeof find === 'object') find = {};
     if (!type || typeof type !== 'string') throw new Error("Le type n'est pas specifier ou n'est pas une chaine de character");
-    const data = await this.models[type].findOne(find);
+    const data = await this.models[type]?.findOne(find);
     if (data) return data;
     return false;
   }
@@ -41,7 +41,7 @@ class DatabaseManager {
   async getAllData(type, find = {}) {
     if (typeof find === 'object') find = {};
     if (!type || typeof type !== 'string') throw new Error("Le type n'est pas specifier ou n'est pas une chaine de character");
-    const data = await this.models[type].find(find);
+    const data = await this.models[type]?.find(find);
     if (data) return data;
     return false;
   }
@@ -131,7 +131,7 @@ class DatabaseManager {
    */
   async findOrCreate(type, find) {
     if (!type || typeof type !== 'string') throw new Error("Le type n'est pas specifier ou n'est pas une chaine de character");
-    const data = !find  ? await this.getData(type) : await this.models[type].findOne(find);
+    const data = !find  ? await this.getData(type) : await this.models[type]?.findOne(find);
     if (data) return data;
 
     const createGuild = await new this.models[type](find ? find: {});
